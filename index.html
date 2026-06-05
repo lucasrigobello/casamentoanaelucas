@@ -1,112 +1,385 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport">
-  <title>Casamento - Ana e Lucas</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f0f2f5;
-      color: #333;
-    }
-    header {
-      background: #4a90e2;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .gift-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      padding: 20px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .gift-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-    .gift-title {
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #4a90e2;
-    }
-    .gift-description {
-      font-size: 0.95em;
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f9f9f9;
-      color: #777;
-      font-size: 0.9em;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Presentes - Ana Luiza e Lucas</title>
+
+<style>
+:root {
+--background: #fbf7f2;
+--card: #ffffff;
+--primary: #7f3d4d;
+--primary-dark: #5f2d3a;
+--accent: #c28b7c;
+--text: #302929;
+--muted: #746b6b;
+--border: #eadbd5;
+--soft: #fff1ed;
+--green: #5f7868;
+--shadow: 0 10px 28px rgba(80, 55, 48, 0.12);
+}
+
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+font-family: "Segoe UI", Arial, sans-serif;
+background: var(--background);
+color: var(--text);
+}
+
+header {
+padding: 42px 20px 34px;
+text-align: center;
+background: #fff;
+border-bottom: 1px solid var(--border);
+}
+
+.monogram {
+width: 72px;
+height: 72px;
+margin: 0 auto 18px;
+display: grid;
+place-items: center;
+border: 1px solid var(--border);
+border-radius: 50%;
+background: var(--soft);
+color: var(--primary-dark);
+font-family: Georgia, serif;
+font-size: 1.35rem;
+font-weight: bold;
+}
+
+h1 {
+margin: 0;
+color: var(--primary-dark);
+font-size: clamp(1.8rem, 4vw, 2.7rem);
+line-height: 1.15;
+}
+
+header p {
+max-width: 680px;
+margin: 14px auto 0;
+color: var(--muted);
+font-size: 1rem;
+line-height: 1.65;
+}
+
+main {
+width: min(100%, 1080px);
+margin: 0 auto;
+padding: 30px 20px 54px;
+}
+
+.summary {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 14px;
+margin-bottom: 30px;
+}
+
+.summary-card {
+padding: 18px;
+background: var(--card);
+border: 1px solid var(--border);
+border-radius: 8px;
+box-shadow: 0 8px 22px rgba(80, 55, 48, 0.08);
+}
+
+.summary-card strong {
+display: block;
+color: var(--primary-dark);
+font-size: 1.55rem;
+line-height: 1;
+}
+
+.summary-card span {
+display: block;
+margin-top: 8px;
+color: var(--muted);
+font-size: 0.92rem;
+}
+
+.category-section {
+margin-top: 34px;
+}
+
+.category-heading {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 14px;
+}
+
+.category-heading h2 {
+margin: 0;
+color: var(--primary-dark);
+font-size: 1.35rem;
+}
+
+.category-heading span {
+padding: 5px 10px;
+border-radius: 999px;
+background: var(--soft);
+color: var(--primary);
+font-size: 0.8rem;
+font-weight: 700;
+}
+
+.gift-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+gap: 18px;
+}
+
+.gift-card {
+position: relative;
+min-height: 170px;
+padding: 20px;
+background: var(--card);
+border: 1px solid var(--border);
+border-radius: 8px;
+box-shadow: var(--shadow);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gift-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 15px 34px rgba(80, 55, 48, 0.16);
+}
+
+.gift-top {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 12px;
+margin-bottom: 18px;
+}
+
+.gift-icon {
+width: 46px;
+height: 46px;
+display: grid;
+place-items: center;
+border-radius: 50%;
+background: var(--soft);
+font-size: 1.35rem;
+}
+
+.gift-status {
+padding: 6px 10px;
+border-radius: 999px;
+background: #edf5ef;
+color: var(--green);
+font-size: 0.76rem;
+font-weight: 800;
+white-space: nowrap;
+}
+
+.gift-title {
+margin: 0 0 8px;
+color: var(--primary-dark);
+font-size: 1.15rem;
+line-height: 1.25;
+}
+
+.gift-description {
+margin: 0;
+color: var(--muted);
+font-size: 0.95rem;
+line-height: 1.5;
+}
+
+footer {
+padding: 24px 20px;
+text-align: center;
+background: #fff;
+border-top: 1px solid var(--border);
+color: var(--muted);
+font-size: 0.95rem;
+}
+
+@media (max-width: 720px) {
+.summary {
+grid-template-columns: 1fr;
+}
+
+.category-heading {
+align-items: flex-start;
+flex-direction: column;
+gap: 8px;
+}
+
+.gift-card {
+min-height: auto;
+}
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>🎁 Presentes que Ana Luiza e Lucas já ganharam</h1>
-  </header>
-  <main>
-    <div class="gift-card">
-      <div class="gift-title">Filtro de Água</div>
-      <div class="gift-description">Purificador/filtro de água</div>
-    </div>
-    <div class="gift-card">
-      <div class="gift-title">Geladeira</div>
-      <div class="gift-description">Geladeira inox 480 litros</div>
-    </div>
-    <div class="gift-card">
-      <div class="gift-title">Jogo de Panelas</div>
-      <div class="gift-description">Jogo de panelas pretas</div>
-    </div>
-    <div class="gift-card">
-      <div class="gift-title">Fogão</div>
-      <div class="gift-description">Fogão 5 bocas e mesa de vidro</div>
-    </div>
-    <div class="gift-card">
-      <div class="gift-title">Batedeira Planetária</div>
-      <div class="gift-description">Batedeira planetária na cor preta com inox</div>
-    </div>
-    <div class="gift-card">
-      <div class="gift-title">Panela Elétrica</div>
-      <div class="gift-description">Panela elétrica na cor vermelha, para cozimento de arroz e legumes</div>
-    </div>
-    <div class="gift-card">
-      <div class="gift-title">Taças de Suco</div>
-      <div class="gift-description">Jogo de 6 taças de suco</div>
-    </div>
-    <div class="gift-card">
-      <div class="gift-title">Bomboniere</div>
-      <div class="gift-description">Bomboniere de vidro</div>
-    </div>
-    <div class="gift-card">
-      <div class="gift-title">Espremedor</div>
-      <div class="gift-description"></div>
-    </div>
-    <div class="gift-card">
-      <div class="gift-title">Air Fryer</div>
-      <div class="gift-description"></div>
-    </div>
-    <!-- Add more gift cards here -->
-  </main>
-  <footer>
-    Com carinho, Ana Luiza e Lucas. Obrigado por facer parte da nossa história!
-  </footer>
+<header>
+<div class="monogram">A & L</div>
+
+<h1>Presentes que Ana Luiza e Lucas já ganharam</h1>
+
+<p>
+Para ajudar quem deseja nos presentear, reunimos aqui os itens que já temos.
+Assim, fica mais fácil escolher outras opções com carinho.
+</p>
+</header>
+
+<main>
+<section class="summary">
+<div class="summary-card">
+<strong>10</strong>
+<span>presentes recebidos</span>
+</div>
+
+<div class="summary-card">
+<strong>4</strong>
+<span>categorias</span>
+</div>
+
+<div class="summary-card">
+<strong>Jun/2026</strong>
+<span>última atualização</span>
+</div>
+</section>
+
+<section class="category-section">
+<div class="category-heading">
+<h2>Cozinha</h2>
+<span>5 itens</span>
+</div>
+
+<div class="gift-grid">
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Filtro de Água</h3>
+<p class="gift-description">Purificador ou filtro de água.</p>
+</article>
+
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Jogo de Panelas</h3>
+<p class="gift-description">Jogo de panelas pretas.</p>
+</article>
+
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Batedeira Planetária</h3>
+<p class="gift-description">Batedeira planetária preta com detalhes em inox.</p>
+</article>
+
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Panela Elétrica</h3>
+<p class="gift-description">Panela elétrica vermelha para cozimento de arroz e legumes.</p>
+</article>
+
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Espremedor</h3>
+<p class="gift-description">Item já recebido.</p>
+</article>
+</div>
+</section>
+
+<section class="category-section">
+<div class="category-heading">
+<h2>Eletrodomésticos</h2>
+<span>3 itens</span>
+</div>
+
+<div class="gift-grid">
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Geladeira</h3>
+<p class="gift-description">Geladeira inox de 480 litros.</p>
+</article>
+
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Fogão</h3>
+<p class="gift-description">Fogão de 5 bocas com mesa de vidro.</p>
+</article>
+
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Air Fryer</h3>
+<p class="gift-description">Item já recebido.</p>
+</article>
+</div>
+</section>
+
+<section class="category-section">
+<div class="category-heading">
+<h2>Mesa posta</h2>
+<span>1 item</span>
+</div>
+
+<div class="gift-grid">
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Taças de Suco</h3>
+<p class="gift-description">Jogo com 6 taças de suco.</p>
+</article>
+</div>
+</section>
+
+<section class="category-section">
+<div class="category-heading">
+<h2>Decoração</h2>
+<span>1 item</span>
+</div>
+
+<div class="gift-grid">
+<article class="gift-card">
+<div class="gift-top">
+<div class="gift-icon"> </div>
+<div class="gift-status">Já recebido</div>
+</div>
+<h3 class="gift-title">Bomboniere</h3>
+<p class="gift-description">Bomboniere de vidro.</p>
+</article>
+</div>
+</section>
+</main>
+
+<footer>
+Com carinho, Ana Luiza e Lucas. Obrigado por fazer parte da nossa história.
+</footer>
 </body>
 </html>
