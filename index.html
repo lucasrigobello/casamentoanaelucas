@@ -77,7 +77,7 @@ padding: 30px 20px 54px;
 
 .summary {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(4, 1fr);
 gap: 14px;
 margin-bottom: 30px;
 }
@@ -194,6 +194,30 @@ font-size: 0.95rem;
 line-height: 1.5;
 }
 
+.suggestions-section {
+    padding-top: 28px;
+    margin-top: 48px;
+    border-top: 1px solid var(--border);
+}
+
+.suggestions-intro {
+    max-width: 720px;
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.suggestion-card {
+    border-color: #e3c8bb;
+    background: #fffaf7;
+}
+
+.suggestion-status {
+    background: #fff1d9;
+    color: #8a5a22;
+}
+
 footer {
 padding: 24px 20px;
 text-align: center;
@@ -243,6 +267,11 @@ Assim, fica mais fácil escolher outras opções com carinho.
 <div class="summary-card">
 <strong>4</strong>
 <span>categorias</span>
+</div>
+
+<div class="summary-card">
+<strong>3</strong>
+<span>sugest de presentes</span>
 </div>
 
 <div class="summary-card">
@@ -421,6 +450,101 @@ Assim, fica mais fácil escolher outras opções com carinho.
 </article>
 </div>
 </section>
+
+<section class="category-section suggestions-section">
+    <div class="category-heading">
+        <h2>Sugestões de presentes que ainda não ganhamos</h2>
+        <span>Ideais para nos presentear</span>
+    </div>
+
+    <p class="suggestions-intro">
+        Caso queira nos presentear, estas são algumas opções que ainda seriam muito úteis para nossa casa.
+    </p>
+
+    <div class="gift-grid">
+        <article class="gift-card suggestions-card">
+            <div class="gift-top">
+                <div class="gift-icon">&#127869;&#65039</div>
+                <div class="gift-status suggestion-status">Sugestão</div>
+            </div>
+            <h3 class="gift-title">Aparelho de Jantar</h3>
+            <p class="gift-description">Pratos rasos, fundos, sobremesa ou conjunto comple.</p>
+        </article>
+
+        <article class="gift-card suggestions-card">
+            <div class="gift-top">
+                <div class="gift-icon">&#127860</div>
+                <div class="gift-status suggestion-status">Sugestão</div>
+            </div>
+            <h3 class="gift-title">Faqueiro</h3>
+            <p class="gift-description">Conjunto de talheres para o dia a dia ou ocasiões especiais.</p>
+        </article>
+
+        <article class="gift-card suggestions-card">
+            <div class="gift-top">
+                <div class="gift-icon">&#127865</div>
+                <div class="gift-status suggestion-status">Sugestão</div>
+            </div>
+            <h3 class="gift-title">Liquidificador</h3>
+            <p class="gift-description">Liquidificador para preparos do dia a dia, sucos, vitaminas e receitas.</p>
+        </article>
+
+        <article class="gift-card suggestions-card">
+            <div class="gift-top">
+                <div class="gift-icon">&#127858</div>
+                <div class="gift-status suggestion-status">Sugestão</div>
+            </div>
+            <h3 class="gift-title">Panela de Pressão</h3>
+            <p class="gift-description">Panlea de pressão tradicional ou elétrica para facilitar os preparos de feijão, sopas e carne cozida.</p>
+        </article>
+
+        <article class="gift-card suggestions-card">
+            <div class="gift-top">
+                <div class="gift-icon">&#129379</div>
+                <div class="gift-status suggestion-status">Sugestão</div>
+            </div>
+            <h3 class="gift-title">Mixer</h3>
+            <p class="gift-description">Mixer de mão para molhos, cremes, vitaminas e preparos rápidos.</p>
+        </article>
+
+        <article class="gift-card suggestions-card">
+            <div class="gift-top">
+                <div class="gift-icon">&#129380</div>
+                <div class="gift-status suggestion-status">Sugestão</div>
+            </div>
+            <h3 class="gift-title">Jogo de Copos e Taças</h3>
+            <p class="gift-description">Copos de vidro, e taças para vinho, ou conjunto para servir bebidas.</p>
+        </article>
+
+        <article class="gift-card suggestions-card">
+            <div class="gift-top">
+                <div class="gift-icon">&#127862</div>
+                <div class="gift-status suggestion-status">Sugestão</div>
+            </div>
+            <h3 class="gift-title">Garrafa Térmica</h3>
+            <p class="gift-description">Garra de café térmica.</p>
+        </article>
+
+        <article class="gift-card suggestions-card">
+            <div class="gift-top">
+                <div class="gift-icon">&#129385</div>
+                <div class="gift-status suggestion-status">Sugestão</div>
+            </div>
+            <h3 class="gift-title">Kit churrasco</h3>
+            <p class="gift-description">Kit de utensílios para churrasco, com facas, pegador, tábua ou espetos.</p>
+        </article>
+
+        <article class="gift-card suggestions-card">
+            <div class="gift-top">
+                <div class="gift-icon">&#128719;&#65039</div>
+                <div class="gift-status suggestion-status">Sugestão</div>
+            </div>
+            <h3 class="gift-title">Jogo de Cama</h3>
+            <p class="gift-description">Lençol, fronhas ou kit completo para cama de casal queen.</p>
+        </article>
+    </div>
+</section>
+
 </main>
 
 <footer>
